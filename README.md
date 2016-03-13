@@ -2,6 +2,12 @@
 
 A simple, multi-touch painting app for Ubuntu Touch
 
+The colors are from the Pebble pallet.
+
+The icon was created from a Material Design icon.
+
+Inspired by [https://github.com/rburchell/qmlstuff](https://github.com/rburchell/qmlstuff)
+
 ## License
 
 Copyright (C) 2016 [Brian Douglass](http://bhdouglass.com/)
