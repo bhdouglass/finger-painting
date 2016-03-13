@@ -1,0 +1,15 @@
+{
+    "name": "@APP_ID@",
+    "description": "A simple multi-touch paint app",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Finger Painting",
+    "hooks": {
+        "finger-painting": {
+            "apparmor": "finger-painting.apparmor",
+            "desktop":  "finger-painting.desktop"
+        }
+    },
+    "version": "1.0",
+    "maintainer": "Brian Douglass <bhdouglass@gmail.com>",
+    "framework" : "ubuntu-sdk-15.04.3"
+}

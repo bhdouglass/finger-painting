@@ -1,0 +1,11 @@
+[Desktop Entry]
+_Name=Finger Painting
+Comment=A simple multi-touch paint app
+Exec=@EXEC@
+Icon=@ICON@
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
+
+
+
