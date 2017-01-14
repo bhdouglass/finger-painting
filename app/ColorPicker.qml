@@ -1,21 +1,37 @@
 import QtQuick 2.4
 import Ubuntu.Components 1.3
-import 'colors.js' as Colors
+import Ubuntu.Components.Popups 1.3
 
 ListItem {
-    id: root
+    id: colorPicker
 
-    property string text
+    onClicked: PopupUtils.open(dialogComponent, root);
+
+    property alias text: label.text
     property string color
 
+    Component {
+        id: dialogComponent
+
+        ColorDialog {
+            id: dialog
+            color: colorPicker.color
+
+            onColorChanged: {
+                colorPicker.color = color;
+                shape.backgroundColor = color;
+            }
+        }
+    }
+
     Label {
+        id: label
+
         anchors {
             left: parent.left
             leftMargin: units.gu(1)
             verticalCenter: parent.verticalCenter
         }
-
-        text: root.text + ': ' + Colors.lookupName(root.color)
     }
 
     UbuntuShape {
@@ -31,6 +47,6 @@ ListItem {
 
         width: height
 
-        backgroundColor: root.color
+        backgroundColor: colorPicker.color
     }
 }

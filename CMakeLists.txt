@@ -35,7 +35,7 @@ option(INSTALL_TESTS "Install the tests on make install" on)
 
 set(APP_NAME          finger-painting)
 set(APP_ID            "finger-painting.bhdouglass")
-set(FINGER-PAINTING_DIR "share/qml/finger-painting")
+set(FINGER-PAINTING_DIR "app")
 set(MAIN_QML          "Main.qml")
 set(ICON              "graphics/finger-painting.png")
 
@@ -58,20 +58,28 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/manifest.json
 install(DIRECTORY "app/graphics" DESTINATION ${DATA_DIR})
 install(FILES "finger-painting.apparmor" DESTINATION ${DATA_DIR})
 
+# Translations
+file(GLOB_RECURSE I18N_SRC_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/po app/*.qml)
+
+find_program(INTLTOOL_MERGE intltool-merge)
+if(NOT INTLTOOL_MERGE)
+    message(FATAL_ERROR "Could not find intltool-merge, please install the intltool package")
+endif()
+find_program(INTLTOOL_EXTRACT intltool-extract)
+if(NOT INTLTOOL_EXTRACT)
+    message(FATAL_ERROR "Could not find intltool-extract, please install the intltool package")
+endif()
+
+add_custom_target(${DESKTOP_FILE_NAME} ALL
+    COMMENT "Merging translations into ${DESKTOP_FILE_NAME}..."
+    COMMAND LC_ALL=C ${INTLTOOL_MERGE} -d -u ${CMAKE_SOURCE_DIR}/po ${CMAKE_SOURCE_DIR}/${DESKTOP_FILE_NAME}.in ${DESKTOP_FILE_NAME}
+
+    # TODO see if there is a better way to do this
+    COMMAND sed -i 's/finger-painting-//g' ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_NAME}
+)
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_NAME} DESTINATION ${DATA_DIR})
+
+
 add_subdirectory(app)
 add_subdirectory(po)
-
-add_custom_target("autopilot" chmod +x ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
-                    COMMAND ${CMAKE_SOURCE_DIR}/app/tests/autopilot/run
-                    WORKING_DIRECTORY ./app)
-
-add_custom_target("check" /usr/bin/qmltestrunner -input ${CMAKE_SOURCE_DIR}/app/tests/unit -import ${CMAKE_BINARY_DIR}/backend
-                    WORKING_DIRECTORY ./app)
-
-add_custom_target("run" /usr/bin/qmlscene -I ${CMAKE_BINARY_DIR}/backend  ${CMAKE_SOURCE_DIR}/app/finger-painting.qml
-                    WORKING_DIRECTORY ./app)
-
-# Normally QtCreator would only show files that are part of a target, but we need it to show also files 
-# that are not compiled. Therefore we add a custom target that just does nothing but list the files 
-add_custom_target("finger-painting_ClickFiles" ALL SOURCES "finger-painting.apparmor" "manifest.json.in")
-

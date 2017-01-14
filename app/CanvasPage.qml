@@ -4,38 +4,36 @@ import QtQuick 2.4
 import Ubuntu.Components 1.3
 import 'colors.js' as Colors
 
+//TODO load image
+//TODO save image
 Page {
-    id: root
     title: i18n.tr('Finger Painting')
 
-    signal settingsTriggered()
-    signal aboutTriggered()
     property var settings
 
-    head.actions: [
-        Action {
-            iconName: 'info'
-            text: i18n.tr('About')
-            onTriggered: aboutTriggered()
-        },
+    header: PageHeader {
+        id: header
+        title: parent.title
 
-        Action {
-            iconName: 'settings'
-            text: i18n.tr('Settings')
-            onTriggered: settingsTriggered()
-        },
+        trailingActionBar.actions: [
+            Action {
+                iconName: 'info'
+                text: i18n.tr('About')
+                onTriggered: pageStack.push(Qt.resolvedUrl('AboutPage.qml'))
+            },
 
-        Action {
-            iconName: 'edit-clear'
-            text: i18n.tr('Clear')
-            onTriggered: {
-                canvas.lastPosById = {};
-                canvas.posById = {};
-                canvas.context.reset();
-                canvas.requestPaint();
+            Action {
+                iconName: 'edit-clear'
+                text: i18n.tr('Clear')
+                onTriggered: {
+                    canvas.lastPosById = {};
+                    canvas.posById = {};
+                    canvas.context.reset();
+                    canvas.requestPaint();
+                }
             }
-        }
-    ]
+        ]
+    }
 
     Rectangle {
         anchors.fill: parent
@@ -43,22 +41,22 @@ Page {
 
         Canvas {
             id: canvas
-            anchors.fill: parent
+
+            anchors {
+                fill: parent
+                bottomMargin: units.gu(2) //Give the user some space to swipe up
+            }
+
             property var lastPosById
             property var posById
 
-            property var colors: [
-                settings.color0,
-                settings.color1,
-                settings.color2,
-                settings.color3,
-                settings.color4,
-                settings.color5,
-                settings.color6,
-                settings.color7,
-                settings.color8,
-                settings.color9
-            ]
+            property var colors: []
+
+            Component.onCompleted: {
+                for (var i = 0; i < 10; i++) {
+                    colors.push(settings.primaryColor);
+                }
+            }
 
             onPaint: {
                 var ctx = getContext('2d');
@@ -84,15 +82,19 @@ Page {
             MultiPointTouchArea {
                 anchors.fill: parent
 
-                onPressed: { //TODO handle single presses ("dots")
+                onPressed: {
                     for (var i = 0; i < touchPoints.length; ++i) {
                         var point = touchPoints[i];
 
-                        if (!canvas.lastPosById[point.pointId] && settings.randomize) {
+                        if (!canvas.lastPosById[point.pointId]) {
+                            var key = (point.pointId % canvas.colors.length);
                             //Only randomize the last touch (so current touches don't change colors)
-
-                            var key = 'color' + (point.pointId % canvas.colors.length);
-                            settings[key] = Colors.random(settings.background, settings[key])
+                            if (settings.randomize) {
+                                canvas.colors[key] = Colors.random(settings.background, canvas.colors[key]);
+                            }
+                            else {
+                                canvas.colors[key] = settings.primaryColor;
+                            }
                         }
 
                         canvas.lastPosById[point.pointId] = {
@@ -100,11 +102,14 @@ Page {
                             y: point.y
                         };
 
+                        //Offset slightly to allow a single tap/dot
                         canvas.posById[point.pointId] = {
-                            x: point.x,
-                            y: point.y
-                        }
+                            x: point.x + 0.1,
+                            y: point.y + 0.1
+                        };
                     }
+
+                    canvas.requestPaint();
                 }
 
                 onUpdated: {
@@ -117,7 +122,7 @@ Page {
                         };
                     }
 
-                    canvas.requestPaint()
+                    canvas.requestPaint();
                 }
 
                 onReleased: {
