@@ -2,11 +2,16 @@
 
 A simple, multi-touch painting app for Ubuntu Touch
 
-The colors are from the Pebble pallet.
-
 The icon was created from a Material Design icon.
 
 Inspired by [https://github.com/rburchell/qmlstuff](https://github.com/rburchell/qmlstuff)
+
+Check out Finger Painting on [uApp Explorer](https://uappexplorer.com/app/finger-painting.bhdouglass).
+
+## Translation
+
+Check out [Finger Painting on Launchpad](https://translations.launchpad.net/finger-painting)
+if you want to help translate Finger Painting into your language.
 
 ## License
 
