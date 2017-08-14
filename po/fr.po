@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Brian Douglass
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: finger-painting.bhdouglass\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-09 06:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../app/AboutPage.qml:6 ../app/CanvasPage.qml:21
+msgid "About"
+msgstr "À propos"
+
+#: ../app/AboutPage.qml:35
+msgid ""
+"Finger Painting is a simple, multi-touch painting app geared towards "
+"children."
+msgstr ""
+"Peinture Avec Les Doigts est une application simple et multi-tactile à "
+"destination des enfants."
+
+#: ../app/AboutPage.qml:43
+msgid "This app was inspired by https://github.com/rburchell/qmlstuff"
+msgstr "Cette application a été inspirée par https://github.com/rburchell/qmlstuff"
+
+#: ../app/AboutPage.qml:51
+msgid "This app is dedicated to my two wonderful children."
+msgstr "Cette application est dédiée à mes deux magnifiques enfants."
+
+#: ../app/AboutPage.qml:59
+msgid "This app is open source software under the GPL v3."
+msgstr "Cette application est libre et placée sous la GPL v3."
+
+#: ../app/AboutPage.qml:67
+msgid "Website"
+msgstr "Site Internet"
+
+#: ../app/CanvasPage.qml:10
+msgid "Finger Painting"
+msgstr "Peinture Avec Les Doigts"
+
+#: ../app/CanvasPage.qml:27
+msgid "Clear"
+msgstr "Effacer"
+
+#: ../app/Main.qml:31
+msgid "Settings"
+msgstr "Paramètres"
+
+#: ../app/Main.qml:58
+msgid "Background Color"
+msgstr "Couleur d'arrière-plan"
+
+#: ../app/Main.qml:74
+msgid "Randomize Colors"
+msgstr "Couleurs aléatoires"
+
+#: ../app/Main.qml:94
+msgid "Primary Color"
+msgstr "Couleur primaire"
+
+#: ../app/Main.qml:105
+msgid "Line Width"
+msgstr "Largeur de la ligne"
+
+#: ../app/ColorDialog.qml:91
+msgid "Ok"
+msgstr "Valider"
+
+#: ../app/ColorDialog.qml:98
+msgid "Cancel"
+msgstr "Annuler"
