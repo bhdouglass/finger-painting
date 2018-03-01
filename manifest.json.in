@@ -9,7 +9,7 @@
             "desktop":  "finger-painting.desktop"
         }
     },
-    "version": "2.01",
+    "version": "2.02",
     "maintainer": "Brian Douglass <bhdouglass@gmail.com>",
     "framework" : "ubuntu-sdk-15.04.6"
 }
