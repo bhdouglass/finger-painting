@@ -1,8 +1,7 @@
 [Desktop Entry]
 _Name=Finger Painting
-Comment=A simple multi-touch paint app
-Exec=qmlscene app/Main.qml
-Icon=graphics/finger-painting.png
+Exec=qmlscene qml/Main.qml
+Icon=assets/logo.svg
 Terminal=false
 Type=Application
 X-Ubuntu-Touch=true

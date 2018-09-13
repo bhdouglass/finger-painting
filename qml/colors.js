@@ -1,27 +1,17 @@
-//TODO translate names
-
 var list = [
-    null,
-    null,
     {
         'name': 'Bright Green',
         'hex': '#55FF00',
     }, {
         'name': 'Inchworm',
         'hex': '#AAFF55',
-    },
-    null,
-    {
+    }, {
         'name': 'Icterine',
         'hex': '#FFFF55',
     }, {
         'name': 'Pastel Yellow',
         'hex': '#FFFFAA',
-    },
-    null,
-    null,
-    null,
-    {
+    }, {
         'name': 'Mint Green',
         'hex': '#AAFFAA',
     }, {
@@ -42,9 +32,7 @@ var list = [
     }, {
         'name': 'Melon',
         'hex': '#FFAAAA',
-    },
-    null,
-    {
+    }, {
         'name': 'Medium Aquamarine',
         'hex': '#55FFAA',
     }, {
@@ -98,9 +86,7 @@ var list = [
     }, {
         'name': 'Folly',
         'hex': '#FF0055',
-    },
-    null,
-    {
+    }, {
         'name': 'Cadet Blue',
         'hex': '#55AAAA',
     }, {
@@ -121,9 +107,7 @@ var list = [
     }, {
         'name': 'Dark Candy Apple Red',
         'hex': '#AA0000',
-    },
-    null,
-    {
+    }, {
         'name': 'Electric Blue',
         'hex': '#55FFFF',
     }, {
@@ -177,9 +161,7 @@ var list = [
     }, {
         'name': 'Rich Brilliant Lavender',
         'hex': '#FFAAFF',
-    },
-    null,
-    {
+    }, {
         'name': 'Liberty',
         'hex': '#5555AA',
     }, {
@@ -200,12 +182,7 @@ var list = [
     }, {
         'name': 'Shocking Pink (Crayola)',
         'hex': '#FF55FF',
-    },
-    null,
-    null,
-    null,
-    null,
-    {
+    }, {
         'name': 'Baby Blue Eyes',
         'hex': '#AAAAFF',
     }, {
@@ -215,9 +192,76 @@ var list = [
         'name': 'Purpureus',
         'hex': '#AA55AA',
     },
-    null,
-    null,
-    null,
+];
+
+var pickerList = [
+    {
+        'name': 'Screamin\' Green',
+        'hex': '#55FF55',
+    }, {
+        'name': 'Green',
+        'hex': '#00FF00',
+    }, {
+        'name': 'Dark Green (X11)',
+        'hex': '#005500',
+    }, {
+        'name': 'Yellow',
+        'hex': '#FFFF00',
+    }, {
+        'name': 'Pastel Yellow',
+        'hex': '#FFFFAA',
+    }, {
+        'name': 'Rajah',
+        'hex': '#FFAA55',
+    }, {
+        'name': 'Chrome Yellow',
+        'hex': '#FFAA00',
+    }, {
+        'name': 'Orange',
+        'hex': '#FF5500',
+    }, {
+        'name': 'Red',
+        'hex': '#FF0000',
+    }, {
+        'name': 'Dark Candy Apple Red',
+        'hex': '#AA0000',
+    }, {
+        'name': 'White',
+        'hex': '#FFFFFF',
+    }, {
+        'name': 'Black',
+        'hex': '#000000',
+    }, {
+        'name': 'Light Gray',
+        'hex': '#AAAAAA',
+    }, {
+        'name': 'Dark Gray',
+        'hex': '#555555',
+    }, {
+        'name': 'Cyan',
+        'hex': '#00FFFF',
+    }, {
+        'name': 'Blue Moon',
+        'hex': '#0055FF',
+    }, {
+        'name': 'Blue',
+        'hex': '#0000FF',
+    }, {
+        'name': 'Duke Blue',
+        'hex': '#0000AA',
+    }, {
+        'name': 'Oxford Blue',
+        'hex': '#000055',
+    }, {
+        'name': 'Imperial Purple',
+        'hex': '#550055',
+    }, {
+        'name': 'Purple',
+        'hex': '#AA00AA',
+    }, {
+        'name': 'Fashion Magenta',
+        'hex': '#FF00AA',
+    },
 ];
 
 function lookupName(hex) {
@@ -244,4 +288,15 @@ function random(not1, not2) {
     }
 
     return color;
+}
+
+function inPickerList(color) {
+    var ok = false;
+    for (var index in pickerList) {
+        if (pickerList[index].hex == color) {
+            ok = true;
+        }
+    }
+
+    return ok;
 }

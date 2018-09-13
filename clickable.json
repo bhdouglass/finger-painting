@@ -1,7 +1,4 @@
 {
-  "package": "finger-painting.bhdouglass",
-  "app": "finger-painting",
-  "sdk": "ubuntu-sdk-15.04",
-  "arch": "armhf",
-  "template": "pure-qml-cmake"
+  "template": "pure-qml-cmake",
+  "kill": "qmlscene"
 }

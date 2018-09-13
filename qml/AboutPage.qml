@@ -32,7 +32,25 @@ Page {
             Label {
                 Layout.fillWidth: true
 
-                text: i18n.tr('Finger Painting is a simple, multi-touch painting app geared towards children.')
+                text: i18n.tr('Finger Painting is a simple, multi-touch painting app for kids.')
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.WordWrap
+            }
+
+            UbuntuShape {
+                Layout.preferredHeight: units.gu(10)
+                Layout.preferredWidth: units.gu(10)
+                Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+
+                source:  Image {
+                    source: '../assets/logo.svg'
+                }
+            }
+
+            Label {
+                Layout.fillWidth: true
+
+                text: i18n.tr('The app icon is based on a Material Design icon (Apache 2.0)');
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
             }
@@ -40,7 +58,7 @@ Page {
             Label {
                 Layout.fillWidth: true
 
-                text: i18n.tr('This app was inspired by https://github.com/rburchell/qmlstuff');
+                text: i18n.tr('The emoji come from Twemoji (CC-BY 4.0)');
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
             }
@@ -48,7 +66,7 @@ Page {
             Label {
                 Layout.fillWidth: true
 
-                text: i18n.tr('This app is dedicated to my two wonderful children.');
+                text: i18n.tr('The drawing code was inspired by https://github.com/rburchell/qmlstuff');
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
             }
@@ -56,7 +74,15 @@ Page {
             Label {
                 Layout.fillWidth: true
 
-                text: i18n.tr('This app is open source software under the GPL v3.');
+                text: i18n.tr('This app is dedicated to my wonderful children.');
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.WordWrap
+            }
+
+            Label {
+                Layout.fillWidth: true
+
+                text: i18n.tr('A Brian Douglass app, consider donating if you like it and want to see more apps like it!')
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
             }
@@ -64,9 +90,9 @@ Page {
             Button {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
 
-                text: i18n.tr('Website')
+                text: i18n.tr('Donate')
                 color: UbuntuColors.orange
-                onClicked: Qt.openUrlExternally('http://bhdouglass.com/')
+                onClicked: Qt.openUrlExternally('https://liberapay.com/bhdouglass')
             }
         }
     }

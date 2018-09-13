@@ -1,6 +1,6 @@
 {
-    "name": "@APP_ID@",
-    "description": "A simple multi-touch paint app",
+    "name": "finger-painting.bhdouglass",
+    "description": "A simple painting app for kids",
     "architecture": "@CLICK_ARCH@",
     "title": "Finger Painting",
     "hooks": {
@@ -9,7 +9,7 @@
             "desktop":  "finger-painting.desktop"
         }
     },
-    "version": "2.02",
+    "version": "3.0.0",
     "maintainer": "Brian Douglass <bhdouglass@gmail.com>",
-    "framework" : "ubuntu-sdk-15.04.6"
+    "framework" : "ubuntu-sdk-15.04.5"
 }

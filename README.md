@@ -1,17 +1,18 @@
 # Finger Painting
 
-A simple, multi-touch painting app for Ubuntu Touch
+A simple, multi-touch painting Ubuntu Touch app for kids.
 
-The icon was created from a Material Design icon.
+Download this app from [the OpenStore](https://open-store.io/app/finger-painting.bhdouglass).
 
-Inspired by [https://github.com/rburchell/qmlstuff](https://github.com/rburchell/qmlstuff)
+## Icons & Code
 
-Check out Finger Painting on [uApp Explorer](https://uappexplorer.com/app/finger-painting.bhdouglass).
+The app icon is based on a [Material Design](https://material.io/tools/icons/) icon (Apache 2.0).
+The emoji come from [Twemoji](https://twemoji.twitter.com/) (CC-BY 4.0)
+Drawing code inspired by [https://github.com/rburchell/qmlstuff](https://github.com/rburchell/qmlstuff)
 
-## Translation
+## Development
 
-Check out [Finger Painting on Launchpad](https://translations.launchpad.net/finger-painting)
-if you want to help translate Finger Painting into your language.
+Build and run using [clickable](http://clickable.bhdouglass.com).
 
 ## License
 
