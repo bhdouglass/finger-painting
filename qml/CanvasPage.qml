@@ -120,7 +120,11 @@ Page {
                         var point = touchPoints[i];
 
                         if (stamp) {
-                            canvas.getContext('2d').drawImage(stamp, point.x - 20, point.y - 20);
+                            canvas.getContext('2d').drawImage(
+                                stamp,
+                                point.x - 72,
+                                point.y - 72
+                            );
                         }
                         else {
                             if (!canvas.lastPosById[point.pointId]) {
