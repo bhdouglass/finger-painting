@@ -7,7 +7,9 @@ Download this app from [the OpenStore](https://open-store.io/app/finger-painting
 ## Icons & Code
 
 The app icon is based on a [Material Design](https://material.io/tools/icons/) icon (Apache 2.0).
+
 The emoji come from [Twemoji](https://twemoji.twitter.com/) (CC-BY 4.0)
+
 Drawing code inspired by [https://github.com/rburchell/qmlstuff](https://github.com/rburchell/qmlstuff)
 
 ## Development
@@ -16,7 +18,7 @@ Build and run using [clickable](http://clickable.bhdouglass.com).
 
 ## License
 
-Copyright (C) 2016 [Brian Douglass](http://bhdouglass.com/)
+Copyright (C) 2018 [Brian Douglass](http://bhdouglass.com/)
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3, as published
 by the Free Software Foundation.
