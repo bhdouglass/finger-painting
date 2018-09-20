@@ -6,10 +6,11 @@
     "hooks": {
         "finger-painting": {
             "apparmor": "finger-painting.apparmor",
-            "desktop":  "finger-painting.desktop"
+            "desktop":  "finger-painting.desktop",
+            "content-hub": "finger-painting.content-hub"
         }
     },
-    "version": "3.0.0",
+    "version": "3.1.0",
     "maintainer": "Brian Douglass <bhdouglass@gmail.com>",
     "framework" : "ubuntu-sdk-15.04.5"
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: finger-painting.bhdouglass\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-13 20:24+0000\n"
+"POT-Creation-Date: 2018-09-20 20:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,6 +53,10 @@ msgstr ""
 
 #: ../qml/CanvasPage.qml:16 finger-painting.desktop.in.h:1
 msgid "Finger Painting"
+msgstr ""
+
+#: ../qml/CanvasPage.qml:58
+msgid "Save"
 msgstr ""
 
 #: ../qml/Components/ColorDialog.qml:91
