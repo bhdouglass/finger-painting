@@ -3,6 +3,8 @@ import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.0
 import Ubuntu.Content 1.1
 
+import Utils 1.0
+
 PopupBase {
     id: openDialog
     anchors.fill: parent
@@ -31,11 +33,13 @@ PopupBase {
                 activeTransfer.items = items;
                 activeTransfer.state = ContentTransfer.Charged;
 
-                PopupUtils.close(openDialog)
+                Utils.remove(path);
+                PopupUtils.close(openDialog);
             }
 
             onCancelPressed: {
-                PopupUtils.close(openDialog)
+                Utils.remove(path);
+                PopupUtils.close(openDialog);
             }
         }
     }

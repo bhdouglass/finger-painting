@@ -57,13 +57,12 @@ Page {
                 iconName: 'save'
                 text: i18n.tr('Save')
                 onTriggered: {
-                    var date = (new Date()).toString();
+                    var date = (new Date()).toISOString();
                     // TODO no hardcoding
                     var path = '/home/phablet/.cache/finger-painting.bhdouglass/' + date + '.png';
                     canvas.save(path);
 
                     PopupUtils.open(openDialog, root, { 'path': path });
-                    // TODO delete file when we are done with it
                 }
             }
         ]
